@@ -1,4 +1,4 @@
-static inline int sys_write(const int fd, const void *buf, const unsigned int count)
+static inline int sys_write(int fd, const void *buf, unsigned int count)
 {
     int ret;
     asm volatile ("syscall;" : "=a"(ret) : "a"(1), "D"(fd), "S"(buf), "d"(count)/* : "cc", "%rax", "%rdi", "%rsi"*/);
